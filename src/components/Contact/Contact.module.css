@@ -1,0 +1,28 @@
+.itemContact {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .itemContact:not(:last-child) {
+  margin-bottom: 20px;
+} */
+
+.icon {
+  margin-right: 10px;
+}
+
+.text {
+  font-size: 20px;
+}
+
+.itemContact button {
+  padding: 5px;
+  background-color: rgb(244, 244, 244);
+  border: 1px solid gray;
+  border-radius: 5px;
+}

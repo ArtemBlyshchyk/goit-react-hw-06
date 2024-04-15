@@ -1,0 +1,16 @@
+.searchContainer {
+  margin-top: 25px;
+  width: 350px;
+}
+
+.searchContainer input {
+  width: inherit;
+  border: 1px solid;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+.searchContainer > input:focus {
+  border: 1px solid blue;
+  outline: 1px solid blue;
+}
