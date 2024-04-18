@@ -1,33 +1,22 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 
 import css from "./ContactList.module.css";
-import { deleteContact } from "../../redux/contactsSlice";
+import { selectContacts, selectNameFilter } from "../../redux/selectors";
 
 const ContactList = () => {
-  const dispatch = useDispatch();
-  const selectContacts = useSelector((state) => state.contacts.items);
-  const selectNameFilter = useSelector((state) => state.filters.name);
-  //Функція видалення контактів
-  const onDeleteContact = (contactId) => {
-    dispatch(deleteContact(contactId));
-  };
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectNameFilter);
 
   //Функція фільтрації за фільтраційним словом
-  const filteredContacts = selectContacts.filter((contact) =>
-    contact.name.toLowerCase().includes(selectNameFilter.toLowerCase())
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
   );
   return (
     <ul className={css.listContact}>
       {Array.isArray(filteredContacts) &&
         filteredContacts.map((contact) => {
-          return (
-            <Contact
-              key={contact.id}
-              contact={contact}
-              onDeleteContact={onDeleteContact}
-            />
-          );
+          return <Contact key={contact.id} contact={contact} />;
         })}
     </ul>
   );

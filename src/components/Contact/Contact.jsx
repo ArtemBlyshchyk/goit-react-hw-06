@@ -1,8 +1,16 @@
 import css from "./Contact.module.css";
 import { FaUser } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 
-const Contact = ({ contact, onDeleteContact }) => {
+const Contact = ({ contact }) => {
+  const dispatch = useDispatch();
+  //Функція видалення контактів
+  const onDeleteContact = (contactId) => {
+    dispatch(deleteContact(contactId));
+  };
+
   return (
     <li className={css.itemContact}>
       <div>
