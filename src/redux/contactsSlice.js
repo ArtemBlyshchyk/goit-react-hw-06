@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   items: [],
 };
 
-const cotactsSlice = createSlice({
+const contactsSlice = createSlice({
   // Ім'я слайсу
   name: "contacts",
   // Початковий стан редюсера слайсу (Anoteher variant initialState: {items: []})
@@ -32,7 +32,7 @@ const cotactsSlice = createSlice({
 });
 
 // Генератори екшенів
-export const { addContact, deleteContact } = cotactsSlice.actions;
+export const { addContact, deleteContact } = contactsSlice.actions;
 
 // Редюсер слайсу
-export const cotactsReducer = cotactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
